@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Snake Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <section class="play-area" aria-label="Snake game board">
+        <div class="topbar">
+          <div>
+            <p class="eyebrow">Classic Arcade</p>
+            <h1>Snake Game</h1>
+          </div>
+          <button class="icon-button" id="soundButton" type="button" aria-label="Toggle sound">
+            <span aria-hidden="true">♪</span>
+          </button>
+        </div>
+
+        <div class="score-row" aria-live="polite">
+          <div class="score-box">
+            <span>Score</span>
+            <strong id="score">0</strong>
+          </div>
+          <div class="score-box">
+            <span>Best</span>
+            <strong id="bestScore">0</strong>
+          </div>
+          <div class="score-box">
+            <span>Speed</span>
+            <strong id="speedLabel">1x</strong>
+          </div>
+        </div>
+
+        <div class="board-wrap">
+          <canvas id="gameCanvas" width="560" height="560" aria-label="Snake board"></canvas>
+          <div class="overlay is-visible" id="overlay">
+            <div class="overlay-panel">
+              <p id="overlayKicker">Ready</p>
+              <h2 id="overlayTitle">Start the chase</h2>
+              <span id="overlayText">Press Space or tap Start.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="control-panel" aria-label="Game controls">
+        <div class="panel-section">
+          <h2>Controls</h2>
+          <div class="button-row">
+            <button id="startButton" type="button">Start</button>
+            <button id="pauseButton" type="button">Pause</button>
+            <button id="restartButton" type="button">Restart</button>
+          </div>
+        </div>
+
+        <div class="panel-section">
+          <h2>Difficulty</h2>
+          <div class="difficulty-group" role="group" aria-label="Choose difficulty">
+            <button class="difficulty-button is-active" data-speed="120" type="button">Easy</button>
+            <button class="difficulty-button" data-speed="92" type="button">Normal</button>
+            <button class="difficulty-button" data-speed="68" type="button">Hard</button>
+          </div>
+        </div>
+
+        <div class="panel-section">
+          <h2>Move</h2>
+          <div class="dpad" aria-label="Touch movement controls">
+            <button class="arrow up" data-direction="up" type="button" aria-label="Move up">▲</button>
+            <button class="arrow left" data-direction="left" type="button" aria-label="Move left">◀</button>
+            <button class="arrow right" data-direction="right" type="button" aria-label="Move right">▶</button>
+            <button class="arrow down" data-direction="down" type="button" aria-label="Move down">▼</button>
+          </div>
+        </div>
+
+        <div class="panel-section stat-list">
+          <div>
+            <span>Keys</span>
+            <strong>Arrows / WASD</strong>
+          </div>
+          <div>
+            <span>Pause</span>
+            <strong>Space</strong>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
